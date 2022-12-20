@@ -42,10 +42,10 @@
 // |  Z  |  X  |  C  |  V  |  B   |______|  N  |  M   |  ,  |  .  |  /  |
 // | DEL/FUNC | BSP/NUM | RET/SYM |______| TAB/MOUSE | SPACE/NAV | ESC/MOVERS |
                         bindings = <
-  &kp Q  &kp W  &kp E  &kp R  &kp T                           &kp Y  &kp U  &kp I  &kp O  &kp P
-  &mt LCMD A  &mt LALT S  &mt LCTRL D  &mt LSHIFT F  &kp G    &kp H  &mt RSHIFT J  &mt RCTRL K  &mt RALT L  &mt RCMD SQT
-  &kp Z  &kp X  &kp C  &kp V  &kp B                           &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH
-  &lt FUNC DEL  &lt NUM BSPC  &lt SYM RET                     &lt MOUSE TAB  &lt NAV SPACE  &lt MOVERS ESC
+  &none  &kp Q  &kp W  &kp E  &kp R  &kp T                           &kp Y  &kp U  &kp I  &kp O  &kp P  &none
+  &none  &mt LCMD A  &mt LALT S  &mt LCTRL D  &mt LSHIFT F  &kp G    &kp H  &mt RSHIFT J  &mt RCTRL K  &mt RALT L  &mt RCMD SQT  &none
+  &none  &kp Z  &kp X  &kp C  &kp V  &kp B                           &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &none
+  &lt FUNC DEL  &lt NUM BSPC  &lt SYM RET                            &lt MOUSE TAB  &lt NAV SPACE  &lt MOVERS ESC
                         >;
                 };
 
@@ -57,9 +57,9 @@
 // |       | RALT|      |      |     |______| \ | 1 | 2 | 3 | ` |
 //               |      |      |     |______| - | 0 | . |
                         bindings = <
-  &bt BT_CLR  &bt BT_SEL 0 &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3   &kp LBKT  &kp N7  &kp N8  &kp N9  &kp RBKT
-  &kp LCMD  &kp LALT  &kp LCTRL  &kp LSHFT  &none                     &kp EQUAL  &kp N4  &kp N5  &kp N6  &kp SEMI
-  &none  &kp RALT  &none  &none  &none                                &kp BSLH  &kp N1  &kp N2  &kp N3  &kp GRAVE
+  &none  &bt BT_CLR  &bt BT_SEL 0 &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3   &kp LBKT  &kp N7  &kp N8  &kp N9  &kp RBKT  &none
+  &none  &kp LCMD  &kp LALT  &kp LCTRL  &kp LSHFT  &none                     &kp EQUAL  &kp N4  &kp N5  &kp N6  &kp SEMI  &none
+  &none  &none  &kp RALT  &none  &none  &none                                &kp BSLH  &kp N1  &kp N2  &kp N3  &kp GRAVE  &none
   &none  &none  &none                                                 &kp MINUS  &kp N0  &kp DOT
                         >;
                 };
@@ -72,9 +72,9 @@
 // |     | RALT|      |      |   |______| | | ! | @ | # | ~ |
 //             |      |      |   |______| _ | ( | ) |
                         bindings = <
-  &none  &none  &none  &none  &none                    &kp LBRC  &kp AMPS  &kp KP_MULTIPLY  &kp RPAR  &kp RBRC
-  &kp LCMD  &kp LALT  &kp LCTRL  &kp LSHFT  &none      &kp PLUS  &kp DLLR  &kp PRCNT  &kp CARET  &kp COLON
-  &none  &kp RALT  &none  &none  &none                 &kp PIPE  &kp EXCL  &kp AT  &kp HASH  &kp TILDE
+  &none  &none  &none  &none  &none  &none                    &kp LBRC  &kp AMPS  &kp KP_MULTIPLY  &kp RPAR  &kp RBRC  &none
+  &none  &kp LCMD  &kp LALT  &kp LCTRL  &kp LSHFT  &none      &kp PLUS  &kp DLLR  &kp PRCNT  &kp CARET  &kp COLON  &none
+  &none  &none  &kp RALT  &none  &none  &none                 &kp PIPE  &kp EXCL  &kp AT  &kp HASH  &kp TILDE  &none
   &none  &none  &none                                  &kp UNDER  &kp LPAR  &kp RPAR
                         >;
                 };
@@ -87,9 +87,9 @@
 // |     | RALT|      |      |   |______| BRK  | F1 | F2 | F3 | F10 |
 //             |      |      |   |______| TAB  | SysRq | Fn |
                         bindings = <
-  &none  &none  &none  &none  &none                    &none  &kp F7  &kp F8  &kp F9  &kp F12
-  &kp LCMD  &kp LALT  &kp LCTRL  &kp LSHFT  &none      &kp SLCK  &kp F4  &kp F5  &kp F6  &kp F11
-  &none  &kp RALT  &none  &none  &none                 &kp PAUSE_BREAK  &kp F1  &kp F2  &kp F3  &kp F10
+  &none  &none  &none  &none  &none  &none                    &none  &kp F7  &kp F8  &kp F9  &kp F12  &none
+  &none  &kp LCMD  &kp LALT  &kp LCTRL  &kp LSHFT  &none      &kp SLCK  &kp F4  &kp F5  &kp F6  &kp F11  &none
+  &none  &none  &kp RALT  &none  &none  &none                 &kp PAUSE_BREAK  &kp F1  &kp F2  &kp F3  &kp F10  &none
   &none  &none  &none                                  &kp TAB  &kp SYSREQ  &kp K_APP
                         >;
                 };
@@ -102,9 +102,9 @@
 // | HOME | PGUP | PGDOWN |  END  | INS  |______|    |      |      | LALT|     |
 //               |   DEL  | BKSPC | ENT  |______|    |      |      |
                         bindings = <
-  &kp K_REDO  &kp K_CUT  &kp K_COPY  &kp K_PASTE  &kp K_UNDO      &none  &none  &none  &none  &none
-  &kp LEFT  &kp UP  &kp DOWN  &kp RIGHT  &kp CAPS                 &none  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RCMD
-  &kp HOME  &kp PG_UP  &kp PG_DN  &kp END  &kp INS                &none  &none  &none  &kp LALT  &none
+  &none  &kp K_REDO  &kp K_CUT  &kp K_COPY  &kp K_PASTE  &kp K_UNDO      &none  &none  &none  &none  &none  &none
+  &none  &kp LEFT  &kp UP  &kp DOWN  &kp RIGHT  &kp CAPS                 &none  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RCMD  &none
+  &none  &kp HOME  &kp PG_UP  &kp PG_DN  &kp END  &kp INS                &none  &none  &none  &kp LALT  &none  &none
   &kp DEL  &kp BSPC  &kp RET                                      &none  &none  &none
                         >;
                 };
@@ -117,9 +117,9 @@
 // |         |         |         |        |      |______|    |      |      | LALT|     |
 //                     |         |        |      |______|    |      |      |
                         bindings = <
-  &kp C_PREV  &kp C_VOL_UP  &kp C_VOL_DN  &kp C_NEXT  &none                                &none  &none  &none  &none
-  &kp C_AC_ZOOM_OUT  &kp C_AC_SCROLL_UP  &kp C_AC_SCROLL_DOWN  &kp C_AC_ZOOM_IN  &none     &none  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RCMD
-  &none  &none  &none  &none  &none                                                        &none  &none  &none  &none  &none
+  &none  &kp C_PREV  &kp C_VOL_UP  &kp C_VOL_DN  &kp C_NEXT  &none                                &none  &none  &none  &none &none
+  &none  &kp C_AC_ZOOM_OUT  &kp C_AC_SCROLL_UP  &kp C_AC_SCROLL_DOWN  &kp C_AC_ZOOM_IN  &none     &none  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RCMD &none
+  &none  &none  &none  &none  &none  &none                                                        &none  &none  &none  &none  &none &none
   &none  &none  &none                                                                      &none  &none  &none
                         >;
                 };
@@ -132,9 +132,9 @@
 // |         |         |         |        |      |______|    |      |      | LALT|     |
 //                     |         |        |      |______|    |      |      |
                         bindings = <
-  &kp C_PREV  &kp C_VOL_UP  &kp C_VOL_DN  &kp C_NEXT  &none                                &none  &none  &none  &none
-  &kp C_AC_ZOOM_OUT  &kp C_AC_SCROLL_UP  &kp C_AC_SCROLL_DOWN  &kp C_AC_ZOOM_IN  &none     &none  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RCMD
-  &none  &none  &none  &none  &none                                                        &none  &none  &none  &none  &none
+  &none  &kp C_PREV  &kp C_VOL_UP  &kp C_VOL_DN  &kp C_NEXT  &none                                &none  &none  &none  &none &none
+  &none  &kp C_AC_ZOOM_OUT  &kp C_AC_SCROLL_UP  &kp C_AC_SCROLL_DOWN  &kp C_AC_ZOOM_IN  &none     &none  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RCMD &none
+  &none  &none  &none  &none  &none  &none                                                        &none  &none  &none  &none  &none &none
   &none  &none  &none                                                                      &none  &none  &none
                         >;
                 };
