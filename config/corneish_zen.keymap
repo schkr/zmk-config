@@ -24,9 +24,12 @@
   };
 };
 
+&key_repeat {
+    usage-pages = <HID_USAGE_KEY HID_USAGE_CONSUMER>;
+};
 
 &mt {
-    tapping-term-ms = <250>;
+    tapping-term-ms = <300>;
 };
 
 
