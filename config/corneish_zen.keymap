@@ -17,6 +17,10 @@
 #define MOUSE 5
 #define MOVERS 6
 
+&key_repeat {
+    usage-pages = <HID_USAGE_KEY HID_USAGE_CONSUMER>;
+};
+
 / {
   chosen {
     zmk,matrix_transform = &default_transform;
@@ -34,14 +38,6 @@
     };
   };
 };
-
-&key_repeat {
-    usage-pages = <HID_USAGE_KEY HID_USAGE_CONSUMER>;
-};
-// &mt {
-//     tapping-term-ms = <300>;
-// };
-
 
 / {
         keymap {
