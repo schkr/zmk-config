@@ -58,7 +58,7 @@
                 };
 
                 num_layer {
-                        label = "NUMBER";
+                        label = "NUM";
 // -----------------------------------------------------------------------------------------
 // | BTclr | BT1 | BT2  | BT3  | BT4 |______| [ | 7 | 8 | 9 | ] |
 // |  CMD  | ALT | CTRL | SHFT |     |______| = | 4 | 5 | 6 | ; |
@@ -68,12 +68,12 @@
   &none  &bt BT_CLR  &bt BT_SEL 0 &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3   &kp LBKT  &kp N7  &kp N8  &kp N9  &kp RBKT  &none
   &none  &kp LCMD  &kp LALT  &kp LCTRL  &kp LSHFT  &none                     &kp EQUAL  &kp N4  &kp N5  &kp N6  &kp SEMI  &none
   &none  &none  &kp RALT  &none  &none  &none                                &kp BSLH  &kp N1  &kp N2  &kp N3  &kp GRAVE  &none
-  &none  &none  &none                                                 &kp MINUS  &kp N0  &kp DOT
+  &none  &none  &none                                                        &kp MINUS  &kp N0  &kp DOT
                         >;
                 };
 
                 sym_layer {
-                        label = "SYMBOL";
+                        label = "SYM";
 // -----------------------------------------------------------------------------------------
 // |     |     |      |      |   |______| { | & | * | ) | } |
 // | CMD | ALT | CTRL | SHFT |   |______| + | $ | % | ^ | : |
@@ -83,12 +83,12 @@
   &none  &none  &none  &none  &none  &none                    &kp LBRC  &kp AMPS  &kp KP_MULTIPLY  &kp RPAR  &kp RBRC  &none
   &none  &kp LCMD  &kp LALT  &kp LCTRL  &kp LSHFT  &none      &kp PLUS  &kp DLLR  &kp PRCNT  &kp CARET  &kp COLON  &none
   &none  &none  &kp RALT  &none  &none  &none                 &kp PIPE  &kp EXCL  &kp AT  &kp HASH  &kp TILDE  &none
-  &none  &none  &none                                  &kp UNDER  &kp LPAR  &kp RPAR
+  &none  &none  &none                                         &kp UNDER  &kp LPAR  &kp RPAR
                         >;
                 };
 
                 func_layer {
-                        label = "FUNCTION";
+                        label = "FUNC";
 // -----------------------------------------------------------------------------------------
 // |     |     |      |      |   |______|      | F7 | F8 | F9 | F12 |
 // | CMD | ALT | CTRL | SHFT |   |______| SCRL | F4 | F5 | F6 | F11 |
@@ -98,12 +98,12 @@
   &none  &none  &none  &none  &none  &none                    &none  &kp F7  &kp F8  &kp F9  &kp F12  &none
   &none  &kp LCMD  &kp LALT  &kp LCTRL  &kp LSHFT  &none      &kp SLCK  &kp F4  &kp F5  &kp F6  &kp F11  &none
   &none  &none  &kp RALT  &none  &none  &none                 &kp PAUSE_BREAK  &kp F1  &kp F2  &kp F3  &kp F10  &none
-  &none  &none  &none                                  &kp TAB  &kp SYSREQ  &kp K_APP
+  &none  &none  &none                                         &kp TAB  &kp SYSREQ  &kp K_APP
                         >;
                 };
 
                 nav_layer {
-                        label = "NAVIGATION";
+                        label = "NAV";
 // -----------------------------------------------------------------------------------------
 // | REDO | CUT  | COPY   | PASTE | UNDO |______|    |      |      |     |     |
 // | LEFT | UP   | DOWN   | RIGHT | CAPS |______|    | SHFT | CTRL | ALT | CMD |
@@ -113,12 +113,12 @@
   &none  &kp K_REDO  &kp K_CUT  &kp K_COPY  &kp K_PASTE  &kp K_UNDO      &none  &none  &none  &none  &none  &none
   &none  &kp LEFT  &kp UP  &kp DOWN  &kp RIGHT  &kp CAPS                 &none  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RCMD  &none
   &none  &kp HOME  &kp PG_UP  &kp PG_DN  &kp END  &kp INS                &none  &none  &none  &kp LALT  &none  &none
-  &kp DEL  &kp BSPC  &kp RET                                      &none  &none  &none
+  &kp DEL  &kp BSPC  &kp RET                                             &none  &none  &none
                         >;
                 };
 
                 mouse_layer {
-                        label = "MOUSE";
+                        label = "MOU";
 // -----------------------------------------------------------------------------------------
 // | PREV    | VOL UP  | VOL DN  | NEXT   |      |______|    |      |      |     |     |
 // | ZoomOut | Scrl Dn | Scrl Up | ZoomIn |      |______|    | SHFT | CTRL | ALT | CMD |
@@ -126,14 +126,14 @@
 //                     |         |        |      |______|    |      |      |
                         bindings = <
   &none  &kp C_PREV  &kp C_VOL_UP  &kp C_VOL_DN  &kp C_NEXT  &none                                &none  &none  &none  &none &none
-  &none  &kp C_AC_ZOOM_OUT  &kp C_AC_SCROLL_UP  &kp C_AC_SCROLL_DOWN  &kp C_AC_ZOOM_IN  &none     &none  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RCMD &none
+  &none  &kp C_AC_ZOOM_OUT  &kp C_AC_SCROLL_UP  &kp C_AC_SCROLL_DOWN  &kp C_AC_ZOOM_IN  &kp C_PP  &none  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RCMD &none
   &none  &none  &none  &none  &none  &none                                                        &none  &none  &none  &none  &none &none
-  &none  &none  &none                                                                      &none  &none  &none
+  &none  &none  &none                                                                             &none  &none  &none
                         >;
                 };
 
                 movers_layer {
-                        label = "MOVERS";
+                        label = "MOV";
 // -----------------------------------------------------------------------------------------
 // | PREV    | VOL UP  | VOL DN  | NEXT   |      |______|    |      |      |     |     |
 // | ZoomOut | Scrl Dn | Scrl Up | ZoomIn |      |______|    | SHFT | CTRL | ALT | CMD |
@@ -143,7 +143,7 @@
   &none  &kp C_PREV  &kp C_VOL_UP  &kp C_VOL_DN  &kp C_NEXT  &none                                &none  &none  &none  &none &none
   &none  &kp C_AC_ZOOM_OUT  &kp C_AC_SCROLL_UP  &kp C_AC_SCROLL_DOWN  &kp C_AC_ZOOM_IN  &none     &none  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RCMD &none
   &none  &none  &none  &none  &none  &none                                                        &none  &none  &none  &none  &none &none
-  &none  &none  &none                                                                      &none  &none  &none
+  &none  &none  &none                                                                             &none  &none  &none
                         >;
                 };
         };
