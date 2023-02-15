@@ -39,7 +39,7 @@
     };
     tm: thumbrow_mods {
       compatible = "zmk,behavior-hold-tap";
-      label = "HOMEROW_MODS";
+      label = "THUMBROW_MODS";
       #binding-cells = <2>;
       flavor = "tap-preferred";
       tapping-term-ms = <200>;
