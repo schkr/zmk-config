@@ -1,5 +1,7 @@
 /*
 *
+* SCHKR MIRYOKU MOD
+* Version 1.1
 * Copyright (c) 2021 Darryl deHaan
 * SPDX-License-Identifier: MIT
 *
@@ -17,6 +19,10 @@
 #define MOU 5
 #define MOV 6
 
+&lt {
+    quick-tap-ms = <200>;
+};
+
 &key_repeat {
     usage-pages = <HID_USAGE_KEY HID_USAGE_CONSUMER>;
 };
@@ -33,18 +39,9 @@
       #binding-cells = <2>;
       flavor = "tap-preferred";
       tapping-term-ms = <200>;
-      quick-tap-ms = <198>;
+      quick-tap-ms = <200>;
 //       global-quick-tap;
       bindings = <&kp>, <&kp>;
-    };
-    tm: thumbrow_mods {
-      compatible = "zmk,behavior-hold-tap";
-      label = "THUMBROW_MODS";
-      #binding-cells = <2>;
-      flavor = "tap-preferred";
-      tapping-term-ms = <200>;
-      quick-tap-ms = <198>;
-      bindings = <&lt>, <&kp>;
     };
   };
 };
@@ -54,106 +51,106 @@
                 compatible = "zmk,keymap";
                 default_layer {
                         label = "QWERTY";
-// -----------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------
 // |  Q  |  W  |  E  |  R  |  T   |______|  Y  |  U   |  I  |  O  |  P  |
 // |  A  |  S  |  D  |  F  |  G   |______|  H  |  J   |  K  |  L  |  ;  |
 // |  Z  |  X  |  C  |  V  |  B   |______|  N  |  M   |  ,  |  .  |  /  |
 // | DEL/FUNC | BSP/NUM | RET/SYM |______| TAB/MOUSE | SPACE/NAV | ESC/MOVERS |
                         bindings = <
-  &none  &kp Q  &kp W  &kp E  &kp R  &kp T                           &kp Y  &kp U  &kp I  &kp O  &kp P  &none
-  &none  &hm LCMD A  &hm LALT S  &hm LCTRL D  &hm LSHIFT F  &kp G    &kp H  &hm RSHIFT J  &hm RCTRL K  &hm RALT L  &hm RCMD SQT  &none
-  &none  &kp Z  &kp X  &kp C  &kp V  &kp B                           &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &none
-  &lt FUNC DEL   &tm SYM RET   &hm 1 BSPC                          &tm NAV SPACE  &tm MOU TAB   &lt MOV ESC
+    &none  &kp Q  &kp W  &kp E  &kp R  &kp T                           &kp Y  &kp U  &kp I  &kp O  &kp P  &none
+    &none  &hm LCMD A  &hm LALT S  &hm LCTRL D  &hm LSHIFT F  &kp G    &kp H  &hm RSHIFT J  &hm RCTRL K  &hm RALT L  &hm RCMD SQT  &none
+    &none  &kp Z  &kp X  &kp C  &kp V  &kp B                           &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &none
+    &lt FUNC DEL  &lt NUM BSPC  &lt SYM RET                            &lt MOU TAB  &lt NAV SPACE  &lt MOV ESC
                         >;
                 };
 
                 num_layer {
                         label = "NUM";
-// -----------------------------------------------------------------------------------------
+// --------------------------------------------------------------
 // | BTclr | BT1 | BT2  | BT3  | BT4 |______| [ | 7 | 8 | 9 | ] |
 // |  CMD  | ALT | CTRL | SHFT |     |______| = | 4 | 5 | 6 | ; |
 // |       | RALT|      |      |     |______| \ | 1 | 2 | 3 | ` |
 //               |      |      |     |______| - | 0 | . |
                         bindings = <
-  &none  &bt BT_CLR  &bt BT_SEL 0 &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3   &kp LBKT  &kp N7  &kp N8  &kp N9  &kp RBKT  &none
-  &none  &kp LCMD  &kp LALT  &kp LCTRL  &kp LSHFT  &none                     &kp EQUAL  &kp N4  &kp N5  &kp N6  &kp SEMI  &none
-  &none  &none  &kp RALT  &none  &none  &none                                &kp BSLH  &kp N1  &kp N2  &kp N3  &kp GRAVE  &none
-  &none  &none  &none                                                        &kp MINUS  &kp N0  &kp DOT
+    &none  &bt BT_CLR  &bt BT_SEL 0 &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3    &kp LBKT  &kp N7  &kp N8  &kp N9  &kp RBKT  &none
+    &none  &kp LCMD  &kp LALT  &kp LCTRL  &kp LSHFT  &none                      &kp EQUAL  &kp N4  &kp N5  &kp N6  &kp SEMI  &none
+    &none  &none  &kp RALT  &none  &none  &none                                 &kp BSLH  &kp N1  &kp N2  &kp N3  &kp GRAVE  &none
+    &none  &none  &none                                                         &kp MINUS  &kp N0  &kp DOT
                         >;
                 };
 
                 sym_layer {
                         label = "SYM";
-// -----------------------------------------------------------------------------------------
+// ----------------------------------------------------------
 // |     |     |      |      |   |______| { | & | * | ) | } |
 // | CMD | ALT | CTRL | SHFT |   |______| + | $ | % | ^ | : |
 // |     | RALT|      |      |   |______| | | ! | @ | # | ~ |
 //             |      |      |   |______| _ | ( | ) |
                         bindings = <
-  &none  &none  &none  &none  &none  &none                    &kp LBRC  &kp AMPS  &kp KP_MULTIPLY  &kp RPAR  &kp RBRC  &none
-  &none  &kp LCMD  &kp LALT  &kp LCTRL  &kp LSHFT  &none      &kp PLUS  &kp DLLR  &kp PRCNT  &kp CARET  &kp COLON  &none
-  &none  &none  &kp RALT  &none  &none  &none                 &kp PIPE  &kp EXCL  &kp AT  &kp HASH  &kp TILDE  &none
-  &none  &none  &none                                         &kp UNDER  &kp LPAR  &kp RPAR
+    &none  &none  &none  &none  &none  &none                  &kp LBRC  &kp AMPS  &kp KP_MULTIPLY  &kp RPAR  &kp RBRC  &none
+    &none  &kp LCMD  &kp LALT  &kp LCTRL  &kp LSHFT  &none    &kp PLUS  &kp DLLR  &kp PRCNT  &kp CARET  &kp COLON  &none
+    &none  &none  &kp RALT  &none  &none  &none               &kp PIPE  &kp EXCL  &kp AT  &kp HASH  &kp TILDE  &none
+    &none  &none  &none                                       &kp UNDER  &kp LPAR  &kp RPAR
                         >;
                 };
 
                 func_layer {
                         label = "FUNC";
-// -----------------------------------------------------------------------------------------
+// -------------------------------------------------------------------
 // |     |     |      |      |   |______|      | F7 | F8 | F9 | F12 |
 // | CMD | ALT | CTRL | SHFT |   |______| SCRL | F4 | F5 | F6 | F11 |
 // |     | RALT|      |      |   |______| BRK  | F1 | F2 | F3 | F10 |
 //             |      |      |   |______| TAB  | SysRq | Fn |
                         bindings = <
-  &none  &none  &none  &none  &none  &none                    &none  &kp F7  &kp F8  &kp F9  &kp F12  &none
-  &none  &kp LCMD  &kp LALT  &kp LCTRL  &kp LSHFT  &none      &kp SLCK  &kp F4  &kp F5  &kp F6  &kp F11  &none
-  &none  &none  &kp RALT  &none  &none  &none                 &kp PAUSE_BREAK  &kp F1  &kp F2  &kp F3  &kp F10  &none
-  &none  &none  &none                                         &kp TAB  &kp SYSREQ  &kp K_APP
+    &none  &none  &none  &none  &none  &none                  &none  &kp F7  &kp F8  &kp F9  &kp F12  &none
+    &none  &kp LCMD  &kp LALT  &kp LCTRL  &kp LSHFT  &none    &kp SLCK  &kp F4  &kp F5  &kp F6  &kp F11  &none
+    &none  &none  &kp RALT  &none  &none  &none               &kp PAUSE_BREAK  &kp F1  &kp F2  &kp F3  &kp F10  &none
+    &none  &none  &none                                       &kp TAB  &kp SYSREQ  &kp K_APP
                         >;
                 };
 
                 nav_layer {
                         label = "NAV";
-// -----------------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 // | REDO | CUT  | COPY   | PASTE | UNDO |______|    |      |      |     |     |
 // | LEFT | UP   | DOWN   | RIGHT | CAPS |______|    | SHFT | CTRL | ALT | CMD |
 // | HOME | PGUP | PGDOWN |  END  | INS  |______|    |      |      | LALT|     |
 //               |   DEL  | BKSPC | ENT  |______|    |      |      |
                         bindings = <
-  &none  &kp K_REDO  &kp K_CUT  &kp K_COPY  &kp K_PASTE  &kp K_UNDO      &none  &none  &none  &none  &none  &none
-  &none  &kp LEFT  &kp UP  &kp DOWN  &kp RIGHT  &kp CAPS                 &none  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RCMD  &none
-  &none  &kp HOME  &kp PG_UP  &kp PG_DN  &kp END  &kp INS                &none  &none  &none  &kp LALT  &none  &none
-  &kp DEL  &kp BSPC  &kp RET                                             &none  &none  &none
+    &none  &kp K_REDO  &kp K_CUT  &kp K_COPY  &kp K_PASTE  &kp K_UNDO    &none  &none  &none  &none  &none  &none
+    &none  &kp LEFT  &kp UP  &kp DOWN  &kp RIGHT  &kp CAPS               &none  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RCMD  &none
+    &none  &kp HOME  &kp PG_UP  &kp PG_DN  &kp END  &kp INS              &none  &none  &none  &kp LALT  &none  &none
+    &kp DEL  &kp BSPC  &kp RET                                           &none  &none  &none
                         >;
                 };
 
                 mouse_layer {
                         label = "MOU";
-// -----------------------------------------------------------------------------------------
-// | PREV    | VOL UP  | VOL DN  | NEXT   |      |______|    |      |      |     |     |
-// | ZoomOut | Scrl Dn | Scrl Up | ZoomIn |      |______|    | SHFT | CTRL | ALT | CMD |
-// |         |         |         |        |      |______|    |      |      | LALT|     |
-//                     |         |        |      |______|    |      |      |
+// ------------------------------------------------------------------------------------
+// | PREV | VOL UP | VOL DN | NEXT |            |______|    |      |      |     |     |
+// |      |        |        |      | Play/Pause |______|    | SHFT | CTRL | ALT | CMD |
+// |      |        |        |      |            |______|    |      |      | LALT|     |
+//                 |        |      |            |______|    |      |      |
                         bindings = <
-  &none  &kp C_PREV  &kp C_VOL_UP  &kp C_VOL_DN  &kp C_NEXT  &none      &none  &none  &none  &none &none &none
-  &none  &none  &none &none &none &kp C_PP                              &none  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RCMD &none
-  &none  &none  &none  &none  &none  &none                              &none  &none  &none  &none  &none &none
-  &none  &none  &none                                                   &none  &none  &none
+    &none  &kp C_PREV  &kp C_VOL_UP  &kp C_VOL_DN  &kp C_NEXT  &none    &none  &none  &none  &none &none &none
+    &none  &none  &none &none &none &kp C_PP                            &none  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RCMD &none
+    &none  &none  &none  &none  &none  &none                            &none  &none  &none  &none  &none &none
+    &none  &none  &none                                                 &none  &none  &none
                         >;
                 };
 
                 movers_layer {
                         label = "MOV";
-// -----------------------------------------------------------------------------------------
+// -------------------------------------------------------------------------------------
 // | PREV    | VOL UP  | VOL DN  | NEXT   |      |______|    |      |      |     |     |
 // | ZoomOut | Scrl Dn | Scrl Up | ZoomIn |      |______|    | SHFT | CTRL | ALT | CMD |
 // |         |         |         |        |      |______|    |      |      | LALT|     |
 //                     |         |        |      |______|    |      |      |
                         bindings = <
-  &none  &kp C_PREV  &kp C_VOL_UP  &kp C_VOL_DN  &kp C_NEXT  &none                                &none  &none  &none  &none &none
-  &none  &kp C_AC_ZOOM_OUT  &kp C_AC_SCROLL_UP  &kp C_AC_SCROLL_DOWN  &kp C_AC_ZOOM_IN  &none     &none  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RCMD &none
-  &none  &none  &none  &none  &none  &none                                                        &none  &none  &none  &none  &none &none
-  &none  &none  &none                                                                             &none  &none  &none
+    &none  &kp C_PREV  &kp C_VOL_UP  &kp C_VOL_DN  &kp C_NEXT  &none                               &none  &none  &none  &none &none
+    &none  &kp C_AC_ZOOM_OUT  &kp C_AC_SCROLL_UP  &kp C_AC_SCROLL_DOWN  &kp C_AC_ZOOM_IN  &none    &none  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RCMD &none
+    &none  &none  &none  &none  &none  &none                                                       &none  &none  &none  &none  &none &none
+    &none  &none  &none                                                                            &none  &none  &none
                         >;
                 };
         };
