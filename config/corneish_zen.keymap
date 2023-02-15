@@ -53,7 +53,7 @@
   &none  &kp Q  &kp W  &kp E  &kp R  &kp T                           &kp Y  &kp U  &kp I  &kp O  &kp P  &none
   &none  &hm LCMD A  &hm LALT S  &hm LCTRL D  &hm LSHIFT F  &kp G    &kp H  &hm RSHIFT J  &hm RCTRL K  &hm RALT L  &hm RCMD SQT  &none
   &none  &kp Z  &kp X  &kp C  &kp V  &kp B                           &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &none
-  &lt FUNC DEL  &lt NUM BSPC  &lt SYM RET                            &lt MOUSE TAB  &lt NAV SPACE  &lt MOVERS ESC
+  &lt FUNC DEL  &lt NUM BSPC  &lt SYM RET                            &lt MOUS TAB  &lt NAV SPACE  &lt MOV ESC
                         >;
                 };
 
