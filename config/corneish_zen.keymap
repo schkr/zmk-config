@@ -125,10 +125,10 @@
 // |         |         |         |        |      |______|    |      |      | LALT|     |
 //                     |         |        |      |______|    |      |      |
                         bindings = <
-  &none  &kp C_PREV  &kp C_VOL_UP  &kp C_VOL_DN  &kp C_NEXT  &none                    &none  &none  &none  &none &none
-  &none  &kp C_AC_ZOOM_OUT  &kp C_AC_SCROLL_UP  &kp C_AC_SCROLL_DOWN &none &kp C_PP   &none  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RCMD &none
-  &none  &none  &none  &none  &none  &none                                            &none  &none  &none  &none  &none &none
-  &none  &none  &none                                                                 &none  &none  &none
+  &none  &kp C_PREV  &kp C_VOL_UP  &kp C_VOL_DN  &kp C_NEXT  &none      &none  &none  &none  &none &none
+  &none  &none  &none  &none &none &kp C_PP                             &none  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RCMD &none
+  &none  &none  &none  &none  &none  &none                              &none  &none  &none  &none  &none &none
+  &none  &none  &none                                                   &none  &none  &none
                         >;
                 };
 
