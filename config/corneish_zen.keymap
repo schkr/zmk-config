@@ -14,10 +14,10 @@
 #define DEFAULT 0
 #define NUM 1
 #define SYM 2
-#define FUNC 3
+#define FUN 3
 #define NAV 4
 #define MOU 5
-#define MOV 6
+#define MED 6
 
 &lt {
     quick-tap-ms = <190>;
@@ -54,16 +54,16 @@
 // |  Q  |  W  |  E  |  R  |  T   |______|  Y  |  U   |  I  |  O  |  P  |
 // |  A  |  S  |  D  |  F  |  G   |______|  H  |  J   |  K  |  L  |  ;  |
 // |  Z  |  X  |  C  |  V  |  B   |______|  N  |  M   |  ,  |  .  |  /  |
-// | DEL/FUNC | BSP/NUM | RET/SYM |______| TAB/MOUSE | SPACE/NAV | ESC/MOVERS |
+// | DEL/FUN | BSP/NUM | RET/SYM |______| TAB/MOUSE | SPACE/NAV | ESC/MED |
                         bindings = <
     &none  &kp Q  &kp W  &kp E  &kp R  &kp T                           &kp Y  &kp U  &kp I  &kp O  &kp P  &none
     &none  &hm LCMD A  &hm LALT S  &hm LCTRL D  &hm LSHIFT F  &kp G    &kp H  &hm RSHIFT J  &hm RCTRL K  &hm RALT L  &hm RCMD SQT  &none
     &none  &kp Z  &kp X  &kp C  &kp V  &kp B                           &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &none
-    &lt FUNC DEL  &lt NUM BSPC  &lt SYM RET                            &lt MOU TAB  &lt NAV SPACE  &lt MOV ESC
+    &lt FUN DEL  &lt NUM BSPC  &lt SYM RET                            &lt MOU TAB  &lt NAV SPACE  &lt MED ESC
                         >;
                 };
 
-                num_layer {
+                number_layer {
                         label = "NUM";
 // --------------------------------------------------------------
 // | BTclr | BT1 | BT2  | BT3  | BT4 |______| [ | 7 | 8 | 9 | ] |
@@ -78,7 +78,7 @@
                         >;
                 };
 
-                sym_layer {
+                symbol_layer {
                         label = "SYM";
 // ----------------------------------------------------------
 // |     |     |      |      |   |______| { | & | * | ) | } |
@@ -93,22 +93,22 @@
                         >;
                 };
 
-                func_layer {
-                        label = "FUNC";
+                function_layer {
+                        label = "FUN";
 // -------------------------------------------------------------------
 // |     |     |      |      |   |______|      | F7 | F8 | F9 | F12 |
 // | CMD | ALT | CTRL | SHFT |   |______| SCRL | F4 | F5 | F6 | F11 |
 // |     | RALT|      |      |   |______| BRK  | F1 | F2 | F3 | F10 |
 //             |      |      |   |______| TAB  | SysRq | Fn |
                         bindings = <
-    &none  &none  &none  &none  &none  &none                  &none  &kp F7  &kp F8  &kp F9  &kp F12  &none
+    &none  &none  &none  &none  &none  &none                  &kp SYSREQ  &kp F7  &kp F8  &kp F9  &kp F12  &none
     &none  &kp LCMD  &kp LALT  &kp LCTRL  &kp LSHFT  &none    &kp SLCK  &kp F4  &kp F5  &kp F6  &kp F11  &none
     &none  &none  &kp RALT  &none  &none  &none               &kp PAUSE_BREAK  &kp F1  &kp F2  &kp F3  &kp F10  &none
-    &none  &none  &none                                       &kp TAB  &kp SYSREQ  &kp K_APP
+    &none  &none  &none                                       &kp TAB  &kp K_MENU  &kp K_APP
                         >;
                 };
 
-                nav_layer {
+                navigation_layer {
                         label = "NAV";
 // -----------------------------------------------------------------------------
 // | REDO | CUT  | COPY   | PASTE | UNDO |______|    |      |      |     |     |
@@ -138,18 +138,18 @@
                         >;
                 };
 
-                movers_layer {
-                        label = "MOV";
+                media_layer {
+                        label = "MED";
 // -------------------------------------------------------------------------------------
-// | PREV    | VOL UP  | VOL DN  | NEXT   |      |______|    |      |      |     |     |
-// | ZoomOut | Scrl Dn | Scrl Up | ZoomIn |      |______|    | SHFT | CTRL | ALT | CMD |
+// | ZoomOut | Scrl Dn | Scrl Up | ZoomIn |      |______|    |      |      |     |     |
+// | PREV    | VOL UP  | VOL DN  | NEXT   | PP   |______|    | SHFT | CTRL | ALT | CMD |
 // |         |         |         |        |      |______|    |      |      | LALT|     |
 //                     |         |        |      |______|    |      |      |
                         bindings = <
-    &none  &kp C_PREV  &kp C_VOL_UP  &kp C_VOL_DN  &kp C_NEXT  &none                               &none  &none  &none  &none &none
-    &none  &kp C_AC_ZOOM_OUT  &kp C_AC_SCROLL_UP  &kp C_AC_SCROLL_DOWN  &kp C_AC_ZOOM_IN  &none    &none  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RCMD &none
+    &none  &kp C_AC_ZOOM_OUT  &kp C_AC_SCROLL_UP  &kp C_AC_SCROLL_DOWN  &kp C_AC_ZOOM_IN  &none    &none  &none  &none  &none &none
+    &none  &kp C_PREV  &kp C_VOL_UP  &kp C_VOL_DN  &kp C_NEXT  &none                               &none  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RCMD &none
     &none  &none  &none  &none  &none  &none                                                       &none  &none  &none  &none  &none &none
-    &none  &none  &none                                                                            &none  &none  &none
+    &kp C_MUTE  &kp C_PP  &kp C_STOP                                                               &none  &none  &none
                         >;
                 };
         };
